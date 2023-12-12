@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<form action="/register" method="post" class="login" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="name">Name</label>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto login" id="name" name="name" placeholder="Name" type="text">
+    </div>
+    <div class="mb-3">
+        <label for="password">Password</label>
+        <input class="form-control mx-auto w-auto login" id="password" name="password" placeholder="Password" type="password">
+    </div>
+    <div class="mb-3">
+        <label for="confirmPassword">Confirm password</label>
+        <input class="form-control mx-auto w-auto login" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" type="password">
+    </div>
+    <div class="mb-3">
+        <label for="file">Choose your photo (optional)</label>
+        <input class="form-control mx-auto w-auto loginimg" type="file" name="file" id="file" accept=".jpg, .jpeg, .png">
+    </div>
+    <div class="mb-3">
+        <label for="birthday">Your birthday</label>
+        <input class="form-control mx-auto w-auto login" id="birthday" name="birthday" type="date">
+    </div>
+    <button class="login" type="submit">Register</button>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit post
+{% endblock %}
+{% block main %}
+    <div class="postContainer">
+        <form action="deletePost" method="POST">
+            <input type="hidden" value="{{id}}" name="post_id">
+            <button class="delete">Delete</button>
+        </form>
+        <form action="/editPost" method="post">
+            <input type="hidden" value="{{id}}" name="post_id">
+            <input placeholder="Title" id="title" class="title" name="title" value="{{title}}">
+            <textarea placeholder="Description" id="description" class="desciption" name="description">{{description}}</textarea>
+            <button class="login" name="submit" type="submit" value="saveBtn">Save post</button>
+        </form>
+    </div>
+{% endblock %}

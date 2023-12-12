@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add post
+{% endblock %}
+{% block main %}
+    <div class="postContainer">
+        <form action="/addPost" method="post">
+            <input placeholder="Title" id="title" class="title" name="title">
+            <textarea placeholder="Description" id="description" class="desciption" name="description"></textarea>
+            <select id="postTypes" name="postTypes">
+                <option selected="selected" value="">Select type of post</option>
+                {% for postType in postTypes %}
+                <option value="{{postType}}">{{postType}}</option>
+                {% endfor %}
+            </select>
+            <input name="goal" id="goal" class="donate" placeholder="Goal" type="number" min="1" style="display: none;"> <span style="display: none;" id="dolarSign">$</span>
+            <br>
+            <button class="login" type="submit">Add Post</button>
+        </form>
+    </div>
+{% endblock %}

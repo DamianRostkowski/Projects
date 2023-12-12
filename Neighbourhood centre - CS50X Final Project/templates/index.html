@@ -1,0 +1,132 @@
+{% extends "layout.html"%}
+{% block title %}
+    Home page
+{% endblock %}
+
+{% block main %}
+<div class="commentFormBg">
+    <div class="commentForm">
+        <h1>Write comment</h1>
+        <form action="/addComment" method="post" >
+            <img class="commentCancel" src="static/photos/webSite/cancel.png" onClick="closeCommentForm()">
+            <input name="commentedPostId" id="commentedPostId" type="hidden" value="">
+            <textarea name="commentArea" id="commentArea"></textarea>
+            <button type="submit" class="btn btn-primary btn-lg">Send</button>
+        </form>
+    </div>
+</div>
+
+<div class="menu">
+    <form action="/" method="post">
+        <div class="menuItem">
+            <h1>
+                Sort by
+            </h1>
+            <select name="SortBy">
+                <option value="date">Date</option>
+                <option value="likes">Likes</option>
+            </select>
+        </div>
+        <div class="menuItem">
+            <div class="showIn">
+                <h1>
+                    Show
+                </h1>
+                Normal posts
+                <input class="form-check-input" type="checkbox" name="normal" value="normal"> <br>
+                Asks for donates
+                <input class = "form-check-input" type="checkbox" name="donate" value="donate"><br>
+                Asks for help
+                <input class = "form-check-input" type="checkbox" name="help" value="help">
+            </div>
+        </div>
+        <div class="menuItem personSearchBar">
+            <h1>
+                Find person
+            </h1>
+            <input id="findPerson"><br>
+            <select name="searchPersonList" id="searchPersonList"></select>
+        </div>
+        <div class="menuItem" style="border: 0">
+            <button class="filter" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+<div class="postsSite">
+    {% for post in posts %}
+    {% if post.type in checkboxes %}
+    <div class="post" id="{{post.id}}">
+        <div class="postContent ">
+            <div class="postTop">
+                <img src="static/photos/users/{{post.photo}}">
+                <p class="date"> {{post.date}} </p>
+                <p class="name"> {{post.user_name}} </p>
+                <h1> {{post.topic}} </h1>
+            </div>
+            <div class="postMain scrollbarRemove">
+                <p> {{post.description}} </p>
+            </div>
+            <div class="buttons">
+                <button {% if post.isLiked == 1 %} style="background-color: lime;"{% endif %} name="like">Like{%if post.likes>0%} ({{post.likes}}){%endif%}</button>
+                <button {% if post.isLiked == 0 %} style="background-color: orangered;" {% endif %} name="dislike">Dislike{%if post.dislikes>0%} ({{post.dislikes}}){%endif%}</button>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="rightPost">
+            <div class="postComments scrollbarRemove" {% if post.type == "Donate" %} style="height: 450px;" {%elif post.type== "Help"%} style="height: 450px;" {%endif%}>
+                <button class="btn btn-primary mb-3 btn-lg" onClick="openCommentForm({{post.id}})">Add comment</button>
+                {% for comment in comments %}
+                    {%if comment.post_id == post.id%}
+                    <div class="comment">
+                        <img src="static/photos/users/{{comment.photo}}">
+                        <p class="name">{{comment.name}}</p>
+                        <p class="comment-content">{{comment.content}}</p>
+                        <p class="comment-date">{{comment.date}}</p>
+                    </div>
+                    {%endif%}
+                {%endfor%}
+            </div>
+        {% if post.type == "Donate" %}
+            <div class="donatePlace">
+                <form action="/sendDonate" method="POST">
+                    <input name ="donatePostId" type="hidden" value="{{post.id}}">
+                    <input name ="donateAmmount" class="donateAmmount" type="number" placeholder="0$">
+                    <button class="donateButton" {%if  post.request_money <= post.received_money %} style="background-color: lightgreen" {%endif%} type="submit">
+                        <p>Donate</p>
+                        <p>{{post.received_money}}$/{{post.request_money}}$</p>
+                    </button>
+                    <div class="clear"></div>
+                </form>
+            </div>
+        {%elif post.type == "Help"%}
+            <div class="helpPlace">
+                {% if post.user_help_id %}
+                {%for user_help in users_help%}
+                {%if user_help.id == post.id%}
+                    <div class="gotHelp">
+                        <div class="photoAndName">
+                            <img src="/static/photos/users/{{user_help.photo}}">
+                            <p class="name">{{user_help.name}}</p>
+                        </div>
+                        <p class="declaration">Declared help</p>
+                        <div class="clear"></div>
+                    </div>
+                {%endif%}
+                {% endfor %}
+                {% else %}
+                    <form method="POST" action="/help">
+                        <input name="help_post_id" type="hidden" value="{{post.id}}">
+                        <button class="helpButton" type="submit">
+                            <p>Tap to</p>
+                            <p>volunteer</p>
+                        </button>
+                    </form>
+                {%endif%}
+            </div>
+        {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

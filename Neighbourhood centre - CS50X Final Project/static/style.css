@@ -1,0 +1,711 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.messageBox:empty{
+    display: none;
+}
+.messageBox{
+    font-size: 30px;
+    line-height: 40px;
+    height: 40px;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background-color: lightgreen;
+    transition: 2s;
+}
+
+.hide{
+    opacity: 0;
+}
+
+main{
+    position: relative;
+    background-image: url("photos/webSite/fp_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 90vh;
+}
+a{
+    color: black;
+    text-decoration: none;
+    transition: color 0.8s;
+}
+a:hover{
+    color: green;
+    transition: color 0.4s;
+}
+nav{
+    height: 160px;
+    font-size: 40px;
+    background-color: #eee;
+}
+.nc-brand{
+    font-size: 50px;
+    color: black;
+    text-decoration: none;
+    margin-left: 2%;
+    padding-right: 10%;
+}
+.dropdown-menu{
+    font-size: 30px;
+}
+.nav-item{
+    border-right: 2px solid black;
+}
+.nav-item:last-of-type
+{
+    border-right: 0;
+}
+.dropdown img{
+    width: 50px;
+    border-radius: 50px;
+}
+li{
+    padding: 15px;
+}
+.login{
+    font-size: 40px;
+}
+input.login{
+    border-radius: 20px;
+}
+button.login {
+    background-color: green;
+    padding: 10px 30px;
+    border: 3px solid black;
+    border-radius: 20px;
+    color: white;
+    text-shadow: 2px 2px 1px #000000;
+    transition: 0.2s;
+}
+form.login
+{
+    margin: auto;
+    width: 30%;
+    padding: 60px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+label{
+    color: white;
+    text-shadow: 2px 2px 1px #000000;
+}
+button.login:hover {
+    font-size: 150%;
+}
+.loginimg
+{
+    font-size: 30px;
+}
+.postContainer
+{
+    font-size: 40px;
+    margin: auto;
+    width: 90%;
+    border: 5px solid black;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+}
+.postContainer .title
+{
+    font-size: 150%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 5px;
+    width: 50%;
+    display: block;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.postContainer .desciption
+{
+    display: block;
+    height: 300px;
+    width: 70%;
+    margin: auto;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+.postContainer select{
+    font-size: 80%;
+    text-align: center;
+    width: 15%;
+    margin: auto;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.donate{
+    text-align: center;
+    margin: auto;
+    width: 10%;
+    display: block;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#postTypes
+{
+    margin-bottom: 20px;
+}
+.menu{
+    border-radius: 40px;
+    position: fixed;
+    top: 180px;
+    left: 20px;
+    width: 30%;
+    background-color: white;
+}
+.menuItem h1
+{
+    text-align: center;
+}
+.showIn{
+    width: 150px;
+    margin: auto;
+    text-align: right;
+}
+.menuItem
+{
+    border-bottom: 3px solid black;
+    padding: 20px;
+}
+.menuItem select{
+    margin-top: 20px;
+    font-size: 200%;
+    width: 200px;
+}
+.personSearchBar{
+    height: 200px;
+}
+.postsSite{
+    padding: 20px;
+    background-color: rgba(0, 0,0, 0.6);
+    border-radius: 40px;
+    position: absolute;
+    left: 32%;
+    right: 10%;
+    top: 20px;
+}
+.clear{
+    clear: both;
+}
+button.filter {
+    font-size: 40px;
+    background-color: green;
+    padding: 10px 30px;
+    border: 3px solid black;
+    border-radius: 20px;
+    color: white;
+    text-shadow: 2px 2px 1px #000000;
+    transition: 0.2s;
+}
+button.filter:hover {
+    font-size: 60px;
+}
+.scrollbarRemove::-webkit-scrollbar {
+    display: none;
+}
+.postsSite .post{
+    display: flex;
+    justify-content: left;
+    border: 1px solid black;
+    border-radius: 40px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+.postContent{
+    position: relative;
+    padding: 10px;
+    width: 70%;
+    height: 550px;
+}
+
+.postComments{
+    background-color: #aaa;
+    border: 2px solid green;
+    overflow: scroll;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow-x: hidden;
+}
+.posttComments button{
+
+}
+.postTop{
+    padding-top: 35px;
+    height: 90px;
+    text-align: Center;
+    background-color: gold;
+    border-top-left-radius: 35px;
+}
+.postMain{
+    background-color: lightblue;
+    text-align: start;
+    border-bottom-right-radius: 35px;
+    padding: 10px;
+    height: 250px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.postContent img{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.postContent p.date{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+.postContent p.name{
+    position: absolute;
+    font-width: bold;
+    top: 30px;
+    left: 80px;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons button{
+    border-radius: 20px;
+    background-color: white;
+    height: 100px;
+    display: block;
+    width: 40%;
+    float: left;
+    font-size: 200%;
+}
+.postComments .comment{
+    margin-bottom: 20px;
+    padding: 15px;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.postComments img{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+.postComments .name{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    font-size: 20px;
+}
+.postComments .comment-content
+{
+    margin-top: 50px;
+    text-align: left;
+}
+
+.commentFormBg{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.commentForm{
+    position: absolute;
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.commentCancel
+{
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 2px;
+}
+.commentForm textarea{
+    padding: 10px;
+    width: 80%;
+    height: 150px;
+}
+.commentForm button{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.comment-date{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    font-size: 10px;
+}
+.rightPost{
+    height: 500px;
+    width: 30%;
+}
+
+.donatePlace{
+    border: 2px solid green;
+}
+.donatePlace p{
+    height: 100px;
+    margin: 0;
+}
+.donateAmmount{
+    height: 100px;
+    width: 60%;
+    float: left;
+    margin: 0;
+    font-size: 40px;
+    padding: 10px;
+}
+.donateButton{
+    border: 0;
+    width: 40%;
+    float: left;
+    font-size: 20px;
+    height: 100px;
+    line-height: 20px;
+}
+
+.donateButton p{
+    font-size: 20px;
+    line-height: 30px;
+    height: 30px;
+}
+.helpButton{
+    height: 100px;
+    width: 100%;
+    background-color: aqua;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.rightPost p{
+    margin: 0;
+}
+.gotHelp{
+    background-color: lime;
+    height: 100px;
+    width: 100%;
+}
+
+.gotHelp .photoAndName{
+    float: left;
+    height: 100px;
+    width: 30%;
+    text-align: center;
+    border-right: 2px solid black;
+}
+.gotHelp img{
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+.gotHelp p.name{
+    font-size: 20px;
+}
+
+.gotHelp p.declaration{
+    width: 70%;
+    display: block;
+    font-size: 30px;
+    line-height: 32px;
+    margin-top: 20px;
+    float: left;
+}
+
+.manageMoney
+{
+    margin: auto;
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.manageMoney *{
+    font-size: 50px;
+}
+
+.manageMoney .input-group{
+    margin: auto;
+    width: 250px;
+}
+.manageMoneyButtons {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.manageMoneyButtons button{
+    width: 350px;
+    height: 150px;
+    font-size: 65px;
+    line-height: 150px;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+.manageMoneyButtons .deposit{
+    background-color: fuchsia;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+.manageMoneyButtons .withdraw{
+    background-color: lightgreen;
+    color: black;
+    text-shadow: 2px 2px 2px white;
+}
+
+.editProfile{
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.editProfile .data{
+    width: 60%;
+    float: left;
+    position: static;
+    height: 750px;
+}
+
+.editProfile .editPosts {
+
+    padding: 20px;
+    width: 40%;
+    float: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    overflow: scroll;
+    overflow-x: hidden;
+    align-items: center
+}
+
+.editProfile .editPosts .post{
+    position: relative;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    height: 175px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.editProfile .editPosts .post .editPostContent{
+    height: 135px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.editProfile .editButtons{
+    float: left;
+    width: 150px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.editProfile .editButtons button{
+    background-color: lightblue;
+    padding: 15px;
+    width: 150px;
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.editInputs{
+    text-align: left;
+    float: left;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.editInputs div
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.editInputs .editImage p{
+    padding: 0;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+.editImage img{
+    height: 70px;
+    width: 70px;
+    border-radius: 20px;
+    margin-right: 25px;
+}
+.editInputs input
+{
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 15px;
+    width: 200px;
+    line-height: 40px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.postContainer .delete{
+    position: absolute;
+    top: 70px;
+    right: 8%;
+    width: 150px;
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.btn-success{
+    position: absolute;
+    top: 15px;
+    padding: 10px;
+    font-size: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.btn-warning{
+    width: 100%;
+    padding-bottom: 1px;
+}
+.data .graph img{
+    display: block;
+    height: 380px;
+    flaot: left;
+}
+.data .graph{
+    height: 400px;
+    background-color: #eee;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius: 30px;
+}
+.data .graph .paragraphs{
+    height: 380px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.data .graph .paragraphs p {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    text-align: left;
+}
+
+.newImg{
+    display: inline;
+    visibility: hidden;
+}
+
+.aboutContainer{
+    border-radius: 50px;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    background-color: rgb(255,255,255,0.3);
+}
+
+.aboutPart{
+    border: 3px solid black;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    height: 780px;
+    border-radius: 40px;
+    background-color: lightblue;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+.aboutPart:nth-child(odd)
+{
+    float: left;
+}
+
+.aboutPart:nth-child(even)
+{
+    float: right;
+}
+
+
+.aboutPart .aboutImg{
+
+}
+
+.aboutPart .aboutText{
+    padding: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+    font-size: 22px;
+}
+
+.aboutText h1{
+    margin-bottom: 40px;
+}

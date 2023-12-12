@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manage money
+{% endblock %}
+
+{% block main %}
+<form action="/manageMoney" method="post" class="manageMoney">
+    <h1 class="yourBalance">Your actual balance is {{ actualBalance }}$</h1>
+    <p class="yourBalance mt-5"> Wrtite an ammount of money and make a decision what to do </p>
+    <div class="input-group mb-4 ">
+        <input type="number" name="moneyToManage" class="form-control">
+        <div class="input-group-append"> <span class="input-group-text">$</span></div>
+    </div>
+    <div class="manageMoneyButtons">
+        <button type="submit" value="deposit" class="deposit" name="moneyBtn">Deposit</button>
+        <button type="submit" value="withdraw" class="withdraw" name="moneyBtn">Withdraw</button>
+    </div>
+</form>
+{% endblock %}

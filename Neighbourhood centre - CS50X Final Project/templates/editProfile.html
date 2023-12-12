@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit profile
+{% endblock %}
+
+{% block main %}
+<div class="editProfile">
+    <div class="data">
+        <form action="/editProfile" method="post" enctype="multipart/form-data">
+            <button class="btn btn-success" type="submit">Save changes</button>
+                <div class="editButtons">
+                    <button type="button" onClick="editNameBtn('{{session['name']}}')">Name </button>
+                    <button type="button" onClick="editPasswordBtn()">Password</button>
+                    <button type="button" onClick="editImageBtn()">Image</button>
+                </div>
+                <div class="editInputs">
+                    <input id="editName" disabled="disabled" name="name" value="{{session['name']}}">
+                    <div id="editPasswords" style="visibility: hidden;" class="editPasswords">
+                        <input id="curPas" type="password" name="currentPassword" placeholder="Old password">
+                        <input id="newPas" type="password" name="newPassword" placeholder="New password">
+                    </div>
+                    <div id="editImage" class="editImage">
+                        <img src="static/photos/users/{{session['photo']}}"> <div class="newImg"><p>New image:</p><input id="imgInput" type="file" name="imgInput"  accept=".jpg, .jpeg, .png"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+        </form>
+        <div class="graph mt-5">
+            <div class="paragraphs">
+                <p style="color: orange;">DONATED: {{donated}}$</p>
+                <p style="color: skyblue;">RECEIVED: {{received}}$</p>
+            </div>
+            <img src="static/photos/webSite/graph.png">
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="editPosts scrollbarRemove">
+        {% for post in posts %}
+            <div class="post">
+                <form method="POST" action="/editPost">
+                    <input type="hidden" name="post_id" value="{{post.id}}">
+                    <div class="editPostContent scrollbarRemove">
+                        <h1> {{post.topic}} </h1>
+                        <p class="date">{{post.date}}</p>
+                        <p class="description">{{post.description}}</p>
+                    </div>
+                    <button class="btn btn-warning" name="submit" type="submit" value="editBtn"> Edit post </button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="clear"></div>
+</div>
+{% endblock %}
