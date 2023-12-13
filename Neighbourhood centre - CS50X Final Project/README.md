@@ -1,36 +1,45 @@
-# neighbourhood centre
-#### Video Demo: https://youtu.be/0aq4WhwBHkI
-#### Description:
-```Neighbourhood centre is social platform website that allows neighbours to comunicate eachother. This application made by flask, javascript, sql and jquery allow us not only posting and commenting but also voluntering and send money for others.``` .
+# Neighbourhood Centre
 
-### To run this site you need to install matplotlib by
-`pip install matplotlib`
+#### [Video Demo](https://youtu.be/0aq4WhwBHkI)
 
+#### Description
 
-I used database with five tables: users with data and name of picture file; money which contains information about cash balance of each user; posts that contains information about every post that users sends; likes which is added everytime user send like or dislike to new post changed if user change like for dislike or opposite and deleted if user click like or dislike again; comments that user can left under every post
+"Neighbourhood Centre" is a social platform website built to facilitate neighborly communication. This application, developed using Flask, JavaScript, SQL, and jQuery, empowers users not only to post and comment but also to volunteer and send money to others.
 
+### Running the Site
 
-Register and login system is very similar to this in Week9, modified with adding profile picture which is sends to users folder in photos. To send it I used enctype="multipart/form-data" on the formulage. Main site displays posts which can be liked without refreshing site by using ajax and be commented by other users - after click comment the formulage is displayed in front of whole site with hidden input with id of post which is commenting. Posts have few types - Normal,  Donate which is used to send money for users' goals and help that allow one user to declare help for needy.
+To run this site, ensure you have installed `matplotlib` via:
 
-Posts can be filtered by left panel using checkboxed with types of post. It works on modification sql ask based on choosen options. We can also sort post by likes and publish data. I used ajax again, this time to implement in-real-time users searching.
+pip install matplotlib
 
+### Database Structure
 
-Add post is not complicated: You must input title, description and choose type of it. If type is donate, you have to write your goal to collect.
+The database comprises five tables:
 
+- **Users**: Contains user data and the name of their picture file.
+- **Money**: Holds information about the cash balance of each user.
+- **Posts**: Contains details about every user-generated post.
+- **Likes**: Tracks user likes and dislikes on posts, updating accordingly.
+- **Comments**: Enables users to leave comments on posts.
 
-To change your money balance you have to view Manage Money. In there you have simple system without connected any bank transactions system (yet :). After input ammount you can choose what to do with it - deposit to add founds or withdraw to remove it from your account (if you withdraw to much money you would get communicate).
+### Key Features
 
+- **Registration and Login**: Modeled after Week 9, the system includes a profile picture upload feature using `enctype="multipart/form-data"` in the form.
+- **Post Interaction**: Posts can be liked without page refresh using AJAX. Commenting on a post triggers a form's appearance on the site with a hidden input for the post ID.
+- **Post Types**: Various post types like Normal, Donate (for fundraising goals), and Help (for assisting the needy) are available.
+- **Post Filtering and Sorting**: Posts can be filtered by type through checkboxes and sorted by likes or publication date.
+- **Adding Posts**: Requires a title, description, and post type. 'Donate' posts need a specified fundraising goal.
+- **Manage Money**: Provides a straightforward system for depositing or withdrawing funds without direct banking connections.
+- **About Section**: Presents an overview of the website's functionality.
+- **Profile Editing**: Users can modify their name, password, and photo. Changes can be reset or saved by clicking corresponding buttons.
+- **Graphical Representation**: The profile section includes a graph displaying the user's donation-receive money ratio, generated using matplotlib.
+- **Post Editing**: Users can edit post titles, descriptions, or delete posts.
 
-About is a presentattion about functionality of website.
+### Development Approach
 
+Throughout development, I heavily referenced documentation and occasionally sought clarification from a friend or YouTube tutorials for practical examples and explanations.
 
-After click our name in top-right corner we can log-out or enter to edit profile. In second scenario we can see name, password and photo buttons. After click it website allow us to change every of this field. After click buttons again the changes are reset to previous one. To save changes you must click green button on top. Under this form is placed a graph with informations about our donate-recevie money ratio. To make graph i used matplotlib libary and save the graph in the webSite folder in photos. If edit profile is open every time, the old graph is deleted and new one is moving on it place. On this subpage there are your post edit part. You can click edit button for every of your posts. After it you can edit title and description or delete it.
+### Inspirational Films
 
-
-To make this site I used documentation or if I still didn't know how to implement something I asked my friend for clarification or search films on youtube that explains and gift me example of it.
-
-Films I got inspiration from:
-
-[Film about ajax](https://www.youtube.com/watch?v=nF9riePnm80&ab_channel=RedEyedCoderClub).
-
-[Film about matplotlib](https://www.youtube.com/watch?v=MPiz50TsyF0&ab_channel=CoreySchafer).
+- [Ajax Tutorial](https://www.youtube.com/watch?v=nF9riePnm80&ab_channel=RedEyedCoderClub)
+- [Matplotlib Tutorial](https://www.youtube.com/watch?v=MPiz50TsyF0&ab_channel=CoreySchafer)
