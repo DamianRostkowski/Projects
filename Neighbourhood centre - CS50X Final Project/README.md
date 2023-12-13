@@ -9,8 +9,10 @@
 ### Running the Site
 
 To run this site, ensure you have installed `matplotlib` via:
-
+```
 pip install matplotlib
+```
+
 
 ### Database Structure
 
